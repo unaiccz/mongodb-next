@@ -9,7 +9,6 @@ export default async function connectDB() {
 
     try {
         const db = await connect("mongodb+srv://unaicc:011110@cluster0.0owbazx.mongodb.net/?retryWrites=true&w=majority",)
-        console.log(db.connection.db.databaseName);
         conn.connected = db.connection.readyState;
         connection.on('connected', () => {
             console.log('Database connected');
