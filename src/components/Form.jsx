@@ -1,4 +1,5 @@
 'use client'
+import axios from 'axios';
 import { useRouter } from 'next/navigation';
 import React, {useState} from 'react'
 
@@ -11,13 +12,10 @@ function Form() {
     });
 const onsubmit = async (e) => {
     e.preventDefault();
-const res = await fetch('/api/tasks', {
-method: 'POST',
-body: JSON.stringify(F_data),
-headers: {'Content-Type': 'application/json'}
-})
-const data = await res.json();
-rt.refresh();
+// use axios
+    const res = await axios.post('http://localhost:3000/api/products', F_data);
+    console.log(res.data);
+    rt.refresh();
 }
     const handleChange = (e) => {
         setF_data({
