@@ -11,7 +11,7 @@ function Form() {
     });
 const onsubmit = async (e) => {
     e.preventDefault();
-const res = await fetch('http://localhost:3000/api/tasks', {
+const res = await fetch('/api/tasks', {
 method: 'POST',
 body: JSON.stringify(F_data),
 headers: {'Content-Type': 'application/json'}
