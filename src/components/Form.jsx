@@ -13,7 +13,7 @@ function Form() {
 const onsubmit = async (e) => {
     e.preventDefault();
 // use axios
-    const res = await axios.post('http://localhost:3000/api/products', F_data);
+    const res = await axios.post('http://localhost:3000/api/tasks', F_data);
     console.log(res.data);
     rt.refresh();
 }
