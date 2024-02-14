@@ -1,10 +1,10 @@
-import { NextResponse } from "next/server";
+ import { NextResponse } from "next/server";
 import connectDB from "@/utils/db";
 import Product from "@/models/product";
 
 export async function GET(){
     connectDB();
-    const products = await Product.find(); // Aquí está la corrección
+    const products = await Product.find();
     return NextResponse.json(products)
 }
 export async function POST(req, res){
