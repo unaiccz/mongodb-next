@@ -20,7 +20,7 @@ Swal.fire({
     icon: 'success',
     title: `Producto ${F_data.name} guardado`,
     showConfirmButton: true,
-    timer: 1500
+    timer: 4000
 });
 rt.refresh();
 }
