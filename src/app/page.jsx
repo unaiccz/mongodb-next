@@ -2,14 +2,10 @@ import connectDB from '@/utils/db'
 import Product from '@/models/product'
 import React from 'react'
 import Form from '@/components/Form';
-async function LoaProducts(){
-  connectDB();
-  const products = await Product.find();
-  return products;
-}
 
 async function page() {
-const products = await LoaProducts();
+connectDB()
+  const products = await Product.find()
   return (
     <div className='mx-4'>
 {/* crea una pagina con tailwind css para mostrar productos con nombre precio y descripcion redondeados */}
