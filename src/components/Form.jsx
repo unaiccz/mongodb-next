@@ -1,4 +1,5 @@
 'use client'
+import Swal from 'sweetalert2';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
 import React, {useState} from 'react'
@@ -15,7 +16,13 @@ const onsubmit = async (e) => {
 // use axios
     const res = await axios.post('api/tasks', F_data);
     console.log(res.data);
-    rt.refresh();
+Swal.fire({
+    icon: 'success',
+    title: `Producto ${F_data.name} guardado`,
+    showConfirmButton: true,
+    timer: 1500
+});
+rt.refresh();
 }
     const handleChange = (e) => {
         setF_data({
