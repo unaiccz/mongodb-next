@@ -1,22 +1,27 @@
- import { NextResponse } from "next/server";
-import connectDB from "@/utils/db";
-import Product from "@/models/product";
+export async function GET(req, res){
+    // Set CORS headers
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
-export async function GET(){
     connectDB();
     const products = await Product.find();
-    return NextResponse.json(products)
+    return res.status(200).json(products);
 }
+
 export async function POST(req, res){
+    // Set CORS headers
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+
     try {
         connectDB()
         const data = await req.json();
         const nproduct = new Product(data);
         const product_saved = await nproduct.save();
-        return NextResponse.json(product_saved);
+        return res.status(200).json(product_saved);
     } catch (error) {
-        return NextResponse.json(error.message,{
-            status: 400
-        });
+        return res.status(400).json({ message: error.message });
     }
 }
