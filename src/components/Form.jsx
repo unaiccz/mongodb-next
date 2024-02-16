@@ -14,7 +14,7 @@ function Form() {
 const onsubmit = async (e) => {
     e.preventDefault();
 // use axios
-    const res = await axios.post('api/tasks', F_data);
+    const res = await axios.post('/api/tasks', F_data);
     console.log(res.data);
 Swal.fire({
     icon: 'success',
