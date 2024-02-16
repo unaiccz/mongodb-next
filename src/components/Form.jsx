@@ -15,7 +15,10 @@ const onsubmit = async (e) => {
     e.preventDefault();
 // use axios
     const res = await axios.post('/api/tasks', F_data);
+<<<<<<< HEAD
     console.log(res.data);
+=======
+>>>>>>> 713a1f056bc96858b65a12c20bd5ed469225e2ab
 Swal.fire({
     icon: 'success',
     title: `Producto ${F_data.name} guardado`,
