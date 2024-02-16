@@ -14,8 +14,7 @@ function Form() {
 const onsubmit = async (e) => {
     e.preventDefault();
 // use axios
-    const res = await axios.post('api/tasks', F_data);
-    console.log(res.data);
+    const res = await axios.post('/api/tasks', F_data);
 Swal.fire({
     icon: 'success',
     title: `Producto ${F_data.name} guardado`,
